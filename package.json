@@ -1,0 +1,21 @@
+{
+  "name": "palm-js",
+  "version": "1.0.0",
+  "description": "A PaLM API for JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "EvanZhouDev",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EvanZhouDev/palm-js.git"
+  },
+  "homepage": "https://github.com/EvanZhouDev/palm-js",
+  "keywords": [
+    "Google",
+    "PaLM",
+    "AI"
+  ]
+}
