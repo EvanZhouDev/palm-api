@@ -1,1 +1,1 @@
-# PaLM.js
+# PaLM API

@@ -1,5 +1,5 @@
 {
-  "name": "palm-js",
+  "name": "palm-api",
   "version": "1.0.0",
   "description": "A PaLM API for JS",
   "main": "index.js",
@@ -10,9 +10,9 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EvanZhouDev/palm-js.git"
+    "url": "https://github.com/EvanZhouDev/palm-api.git"
   },
-  "homepage": "https://github.com/EvanZhouDev/palm-js",
+  "homepage": "https://github.com/EvanZhouDev/palm-api",
   "keywords": [
     "Google",
     "PaLM",
