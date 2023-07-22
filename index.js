@@ -165,3 +165,5 @@ class PaLM {
         return (new Chat(this, rawConfig))
     }
 }
+
+export default PaLM;
