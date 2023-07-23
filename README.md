@@ -4,23 +4,29 @@
   <source media="(prefers-color-scheme: light)" srcset="./assets/banner@light.svg">
   <img alt="PaLM API Banner" src="./assets/banner@light.svg">
 </picture>
-
-# PaLM API
-
-The most powerful JavaScript Google PaLM API available.
+<p align="center">
+  <a href="#documentation">Docs</a> | <a href="https://github.com/evanzhoudev/palm-api">GitHub</a> | <a href="#frequently-asked-questions">FAQ</a>
+</p>
 
 ## Features
 
-- 🤖 **Multi-Model Support**: Use any model available for PaLM
-- 🌐 **Contextual Conversations**: Chat with PaLM with ease
-- 🧪 **Easy Parameter Tweaking**: Easily modify `temperature`, `top_p`, and more
+- 🤖 [**Multi-Model Support**](#documentation): Use any model available for PaLM
+- 🌐 [**Contextual Conversations**](#palmcreatechat): Chat with PaLM with ease
+- 🧪 [**Easy Parameter Tweaking**](#config): Easily modify `temperature`, `top_p`, and more
 
 ### Highlights
 
 Compared to Google's [own API](#why-palm-api):
 
-- 🚀 **Easy**: _**2.8x**_ less code needed
-- 🪶 **Lightweight**: _**260x**_ smaller minzipped size
+- ⚡ **Fast**[^1]: As fast as native API (also making it _**4x**_ faster than `googlebard`)
+- 🪶 **Lightweight**[^2]: _**260x**_ smaller minzipped size
+- 🚀 [**Simple & Easy**](#why-palm-api): _**2.8x**_ less code needed
+
+[^1]: Tested with `hyperfine` with the demo code on [Google's own website](https://developers.generativeai.google/tutorials/chat_node_quickstart#generate_messages), and equivalent code written in PaLM API, the times are virtually similar.
+[^2]:
+    _PaLM API_ clocks in at 1.3kb minzipped.
+    [@google/generativelanguage](https://www.npmjs.com/package/@google-ai/generativelanguage) and [google-auth-library](https://www.npmjs.com/package/google-auth-library), the two required packages for Google's own implementation, clocks in at a total (more or less) of [337kb minzipped](https://bundlephobia.com/scan-results?packages=@google-ai/generativelanguage@0.2.1,google-auth-library@9.0.0).
+    That makes PaLM API around 260 times smaller!
 
 ## Table of Contents
 
@@ -99,6 +105,7 @@ let bot = new PaLM(API_KEY, { ...config });
 > Example:
 >
 > ```javascript
+> import PaLM from "palm-api";
 > import fetch from "node-fetch";
 > let bot = new PaLM(API_KEY, {
 > 	fetch: fetch,
@@ -118,7 +125,7 @@ PaLM.ask(message, { ...config });
 ```
 
 #### Config:
-
+Learn more about model parameters [here](https://developers.generativeai.google/guide/concepts#model_parameters).
 | Config            | Type                                       | Description                                                        |
 | ----------------- | ------------------------------------------ | ------------------------------------------------------------------ |
 | `model`           | string                                     | Any model capable of `generateMessage`. Default: `chat-bison-001`. |
@@ -172,7 +179,7 @@ PaLM.generateText(message, { ...config });
 ```
 
 #### Config:
-
+Learn more about model parameters [here](https://developers.generativeai.google/guide/concepts#model_parameters).
 | Config            | Type                                     | Description                                                     |
 | ----------------- | ---------------------------------------- | --------------------------------------------------------------- |
 | `model`           | string                                   | Any model capable of `generateText`. Default: `text-bison-001`. |
@@ -197,11 +204,22 @@ bot.generateText("Write a poem on puppies.", {
 
 #### JSON Response:
 
+See more about safety ratings [here](https://developers.generativeai.google/api/rest/generativelanguage/models/generateText#harmcategory).
+
 ```javascript
 [
 	{
 		output: output,
+		safetyRatings: [
+			HARM_CATEGORY_UNSPECIFIED: rating,
+			HARM_CATEGORY_DEROGATORY: rating,
+			HARM_CATEGORY_TOXICITY: rating,
+			HARM_CATEGORY_VIOLENCE: rating,
+			HARM_CATEGORY_SEXUAL: rating,
+			HARM_CATEGORY_DANGEROUS: rating,
+		]
 	},
+	// More candidates (if asked for)...
 ];
 ```
 
@@ -268,7 +286,7 @@ Basic steps to use import/export chats:
 > You can actually change the messages exported, and PaLM in your new chat instance will adapt to the "edited history." Use this to your advantage!
 
 #### Config for `createChat()`:
-
+Learn more about model parameters [here](https://developers.generativeai.google/guide/concepts#model_parameters).
 All configuration associated with `Chat.ask()` _except_ the `format` is set in the config for `createChat()`.
 
 | Config            | Type                                       | Description                                                        |
@@ -305,3 +323,28 @@ chat.ask("What do you get if you add 1 to that?");
 ```
 
 The response for `Chat.ask()` is exactly the same as `PaLM.ask()`. In fact,they use the same query function under-the-hood.
+
+## Frequently Asked Questions
+
+### "Why can the model not access the internet like Bard?"
+
+PaLM is only a Language Model. Google Bard is able to search the Internet because it is performing additional searches on Google, and feeding the results back into PaLM. Thus, if you do want to mimic the web-search behavior, you need to implement it yourself. (Or just use [`bard-ai`](https://github.com/evanzhoudev/bard-ai) for a _Google Bard_ API!)
+
+### "`fetch` is undefined" or "I can't use default `fetch`"
+
+PaLM API uses the experimental `fetch` function in Node.js. It is enabled by default now, but there are still environments in which it is `undefined`, or disabled. You may also be here because you need to use a special fetch for your development environment. Because of this, PaLM API comes with a way to Polyfill fetch—built in. Just pass in your custom `fetch` function into the config for the PaLM class.
+```javascript
+import PaLM from "palm-api";
+import fetch from "node-fetch";
+
+let bot = new PaLM(API_KEY, {
+	fetch: fetch,
+});
+```
+It's that easy! Just ensure your polyfill has the exact same API as the default Node.js/browser `fetch` or it is not guarenteed to work.
+
+### "Cannot `require` of a ES6 module"
+
+PaLM API, as per today's standards, is a strictly ES6 module (that means it uses the new `import`/`export` syntax). Because of this, you have two options if you are still using `require`/CommonJS Modules:
+1. Migrate to ESM yourself! It will be beneficial for you in the future.
+2. Use a [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import).
