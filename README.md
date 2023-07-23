@@ -96,7 +96,7 @@ Click on "Create API key in new project," and then simply copy the string.
 
 Import PaLM API, then initialize the class with your API key.
 
-> [!WARNING]
+> [!WARNING]\
 > It is recommended that you access your API from `process.env` or `.env`
 
 ```javascript
@@ -111,10 +111,9 @@ let bot = new PaLM(API_KEY, { ...config });
 | ------ | -------- | -------------------------------------------------------------- |
 | fetch  | function | Fetch polyfill with _same interface as native fetch_. Optional |
 
-> [!NOTE]
+> [!NOTE]\
 > PaLM itself and all of its methods have a `config` object that you can pass in as a secondary parameter.
 > Example:
->
 > ```javascript
 > import PaLM from "palm-api";
 > import fetch from "node-fetch";

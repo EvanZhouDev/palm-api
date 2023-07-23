@@ -24,6 +24,7 @@
 <path d="M776.954 255.442C748.972 305.634 766.067 356.196 778.112 375.202C776.487 306.536 819.09 301.518 850.378 293.026C881.666 284.533 889.249 254.796 872.642 231.858C854.298 206.521 807.404 200.822 776.954 255.442Z" fill="#3D16A8"/>
 <path d="M746.923 361.719C744.712 343.556 740.419 324.557 723.945 319.585C728.948 325.11 718.026 341.343 709.66 349.199C702.259 356.15 698.894 373.733 712.868 380.929C728.173 388.811 744.709 369.921 746.923 361.719Z" fill="#3DDB85"/>
 <path d="M736.113 271.208C762.568 307.422 753.901 348.646 746.262 364.731C741.193 311.008 707.503 311.557 682.318 308.211C657.132 304.865 651.036 278.198 661.871 258.569C673.839 236.887 707.326 231.8 736.113 271.208Z" fill="#3D16A8"/>
+<rect x="-6" width="1549" height="45" fill="url(#paint3_linear_5_7)"/>
 </g>
 <defs>
 <filter id="filter0_f_5_7" x="370.152" y="-43" width="657.666" height="531.701" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -56,7 +57,7 @@
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_7"/>
 </filter>
-<linearGradient id="paint0_linear_5_7" x1="860.5" y1="460" x2="960.191" y2="581.939" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_5_7" x1="854.5" y1="473" x2="986.557" y2="592.295" gradientUnits="userSpaceOnUse">
 <stop stop-color="#3E17A9"/>
 <stop offset="1" stop-color="#3ED786"/>
 </linearGradient>
@@ -68,6 +69,10 @@
 <linearGradient id="paint2_linear_5_7" x1="618.664" y1="141.527" x2="926.46" y2="439.839" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
 <stop offset="1" stop-color="#E3E3E3"/>
+</linearGradient>
+<linearGradient id="paint3_linear_5_7" x1="768.5" y1="0" x2="768.5" y2="45" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0D1116"/>
+<stop offset="1" stop-color="#0D1116" stop-opacity="0.35"/>
 </linearGradient>
 <clipPath id="clip0_5_7">
 <rect width="1538" height="725" fill="white"/>
