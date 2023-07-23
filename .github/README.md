@@ -11,7 +11,7 @@
 ## Features
 
 - 🤖 [**Multi-Model Support**](#documentation): Use any model available for PaLM
-- 🌐 [**Contextual Conversations**](#palmcreatechat): Chat with PaLM with ease
+- 🌐 [**Contextual Conversations**](#palmcreatechat): Easily chat with PaLM
 - 🧪 [**Easy Parameter Tweaking**](#config-1): Easily modify `temperature`, `top_p`, and more
 
 ### Highlights
@@ -31,6 +31,7 @@ Compared to Google's [own API](#why-palm-api):
   - [`PaLM.generateText()`](#palmgeneratetext): Use `generateText` models
   - [`PaLM.embed()`](#palmembed): Embed text with PaLM
   - [`PaLM.createChat()`](#palmcreatechat): Continue conversations easily.
+- [FAQ](#frequently-asked-questions)
 - [Contributors](#contributors)
 
 ## Why PaLM API?
