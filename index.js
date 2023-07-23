@@ -119,24 +119,27 @@ class PaLM {
                     context: "",
                     messages: [],
                     examples: [],
-                })
-                this.messages = this.config.messages;
-            }
-
-            async ask(message, rawConfig) {
-                let config = this.PaLM.#parseConfig(rawConfig, {
                     temperature: 0.5,
                     candidate_count: 1,
                     top_p: 0.95,
                     top_k: 40,
                     model: "chat-bison-001",
                     max_output_tokens: 1024,
-                    format: PaLM.FORMATS.MD
                 })
+                this.messages = this.config.messages;
+            }
+
+            async ask(message, rawConfig) {
+                let config = {
+                    ...this.config,
+                    ...this.PaLM.#parseConfig(rawConfig, {
+                        format: PaLM.FORMATS.MD
+                    })
+                }
 
                 let response = await this.PaLM.#query(config.model, "generateMessage", {
                     "prompt": {
-                        "context": this.config.context, "messages": [...this.messages, { "content": message }], "examples": this.config.examples.map(x => ({
+                        "context": config.context, "messages": [...this.messages, { "content": message }], "examples": config.examples.map(x => ({
                             input: { content: x[0] },
                             output: { content: x[1] },
                         }))
@@ -147,7 +150,7 @@ class PaLM {
                     top_k: config.top_k,
                 })
                 if (!response.candidates[0].content) {
-                    throw new Error(`Request rejecteted. Got ${response.at(-1)} instead of response.`)
+                    throw new Error(`Request rejected. Got ${response.at(-1)} instead of response.`)
                 }
                 this.messages.push({ content: message });
                 this.messages.push({ content: response.candidates[0].content });
@@ -160,9 +163,13 @@ class PaLM {
                         throw new Error(`${config.format} is not a valid format. Use PaLM.FORMATS.MD or PaLM.FORMATS.JSON.`)
                 }
             }
+
+            export() {
+                return this.messages;
+            }
         }
 
-        return (new Chat(this, rawConfig))
+        return (new Chat(this, ...rawConfig))
     }
 }
 
