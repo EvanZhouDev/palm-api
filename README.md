@@ -82,10 +82,21 @@ Yep! That's it... get the best features of PaLM, in a package that's simpler and
 ## Documentation
 
 ### Setup
+First, install PaLM API on NPM:
+```bash
+npm install palm-api
+```
+or PNPM:
+```bash
+pnpm add palm-api 
+```
+
+Then, get yourself an API key in Makersuite [here](https://makersuite.google.com/app/apikey).
+Click on "Create API key in new project," and then simply copy the string.
 
 Import PaLM API, then initialize the class with your API key.
 
-> **Warning**
+> [!WARNING]
 > It is recommended that you access your API from `process.env` or `.env`
 
 ```javascript
@@ -100,7 +111,7 @@ let bot = new PaLM(API_KEY, { ...config });
 | ------ | -------- | -------------------------------------------------------------- |
 | fetch  | function | Fetch polyfill with _same interface as native fetch_. Optional |
 
-> **Info**
+> [!NOTE]
 > PaLM itself and all of its methods have a `config` object that you can pass in as a secondary parameter.
 > Example:
 >
