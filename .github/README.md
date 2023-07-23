@@ -1,12 +1,12 @@
 <picture>
 
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/banner@dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/banner@light.svg">
-  <img alt="PaLM API Banner" src="./assets/banner@light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="../assets/banner@dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="../assets/banner@light.svg">
+  <img alt="PaLM API Banner" src="../assets/banner@light.svg">
 </picture>
-<p align="center">
+<h3 align="center">
   <a href="#documentation">Docs</a> | <a href="https://github.com/evanzhoudev/palm-api">GitHub</a> | <a href="#frequently-asked-questions">FAQ</a>
-</p>
+</h3>
 
 ## Features
 
