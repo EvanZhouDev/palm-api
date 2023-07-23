@@ -4,9 +4,9 @@
   <source media="(prefers-color-scheme: light)" srcset="../assets/banner@light.svg">
   <img alt="PaLM API Banner" src="../assets/banner@light.svg">
 </picture>
-<h3 align="center">
+<p align="center">
   <a href="#documentation">Docs</a> | <a href="https://github.com/evanzhoudev/palm-api">GitHub</a> | <a href="#frequently-asked-questions">FAQ</a>
-</h3>
+</p>
 
 ## Features
 
@@ -18,15 +18,9 @@
 
 Compared to Google's [own API](#why-palm-api):
 
-- ⚡ **Fast**[^1]: As fast as native API (also making it _**4x**_ faster than `googlebard`)
-- 🪶 **Lightweight**[^2]: _**260x**_ smaller minzipped size
-- 🚀 [**Simple & Easy**](#why-palm-api): _**2.8x**_ less code needed
-
-[^1]: Tested with `hyperfine` with the demo code on [Google's own website](https://developers.generativeai.google/tutorials/chat_node_quickstart#generate_messages), and equivalent code written in PaLM API, the times are virtually similar.
-[^2]:
-    _PaLM API_ clocks in at 1.3kb minzipped.
-    [@google/generativelanguage](https://www.npmjs.com/package/@google-ai/generativelanguage) and [google-auth-library](https://www.npmjs.com/package/google-auth-library), the two required packages for Google's own implementation, clocks in at a total (more or less) of [337kb minzipped](https://bundlephobia.com/scan-results?packages=@google-ai/generativelanguage@0.2.1,google-auth-library@9.0.0).
-    That makes PaLM API around 260 times smaller!
+- ⚡ [**Fast**](#speed): As fast as native API (also making it _**4x**_ faster than `googlebard`)
+- 🪶 [**Lightweight**](#size): _**260x**_ smaller minzipped size
+- 🚀 [**Simple & Easy**](#code-needed): _**2.8x**_ less code needed
 
 ## Table of Contents
 
@@ -37,6 +31,7 @@ Compared to Google's [own API](#why-palm-api):
   - [`PaLM.generateText()`](#palmgeneratetext): Use `generateText` models
   - [`PaLM.embed()`](#palmembed): Embed text with PaLM
   - [`PaLM.createChat()`](#palmcreatechat): Continue conversations easily.
+- [Contributors](#contributors)
 
 ## Why PaLM API?
 
@@ -78,6 +73,24 @@ bot.ask("How tall is the Eiffel Tower?", {
 ```
 
 Yep! That's it... get the best features of PaLM, in a package that's simpler and easier to use, test, and maintain.
+
+### Statistics
+Comparing against the Google API...
+#### Size
+_PaLM API_ clocks in at just 1.3kb minzipped.
+
+[@google/generativelanguage](https://www.npmjs.com/package/@google-ai/generativelanguage) and [google-auth-library](https://www.npmjs.com/package/google-auth-library), the two required packages for Google's own implementation, clocks in at a total of (more or less) [337kb minzipped](https://bundlephobia.com/scan-results?packages=@google-ai/generativelanguage@0.2.1,google-auth-library@9.0.0).
+
+That makes PaLM API around 260 times smaller!
+
+#### Code Needed
+
+Using at the exact example I showed above, we are at around 2.8x less code needed for PaLM API, looking at characters.
+
+#### Speed
+Comparing the speed with the demo code on [Google's own website](https://developers.generativeai.google/tutorials/chat_node_quickstart#generate_messages), and equivalent code written in PaLM API, the times are virtually similar.
+
+Tested with hyperfine.
 
 ## Documentation
 
@@ -370,7 +383,7 @@ PaLM API, as per today's standards, is a strictly ES6 module (that means it uses
 1. Migrate to ESM yourself! It will be beneficial for you in the future.
 2. Use a [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import).
 
-<h2 align="center">Contributors</h2>
+<h2 align="center" id="contributors">Contributors</h2>
 <p align="center">A special shoutout to developers and contributors of the <a href="https://github.com/EvanZhouDev/bard-ai"><code>bard-ai</code></a> library. The PaLM API interface is basically an exact port of the <a href="https://github.com/EvanZhouDev/bard-ai"><code>bard-ai</code></a> interface.</p>
 <p align="center">
   However, we thank every person that helps in the development process of this library, no matter that be in code, ideas, or anything else.
