@@ -18,22 +18,23 @@ The most powerful JavaScript Google PaLM API available.
 ### Highlights
 
 Compared to Google's [own API](#why-palm-api):
-- ⚡ **Fast**: _**n**_ times faster
+
 - 🚀 **Easy**: _**2.8x**_ less code needed
 - 🪶 **Lightweight**: _**260x**_ smaller minzipped size
 
 ## Table of Contents
+
 - [Why PaLM API?](#why-palm-api)
 - [Documentation](#documentation)
-	- [Setup](#setup): Getting Started
-	- [`PaLM.ask()`](#palmask): The best way to use PaLM
-	- [`PaLM.generateText()`](#palmgeneratetext): Use `generateText` models
-	- [`PaLM.embed()`](#palmembed): Embed text with PaLM
-	- [`PaLM.createChat()`](#palmcreatechat): Continue conversations easily.
+  - [Setup](#setup): Getting Started
+  - [`PaLM.ask()`](#palmask): The best way to use PaLM
+  - [`PaLM.generateText()`](#palmgeneratetext): Use `generateText` models
+  - [`PaLM.embed()`](#palmembed): Embed text with PaLM
+  - [`PaLM.createChat()`](#palmcreatechat): Continue conversations easily.
 
 ## Why PaLM API?
 
-Google has its own API interface for PaLM, though their [@google/generativelanguage](https://www.npmjs.com/package/@google-ai/generativelanguage) and [google-auth-library](https://www.npmjs.com/package/google-auth-library) packages	.
+Google has its own API interface for PaLM, though their [@google/generativelanguage](https://www.npmjs.com/package/@google-ai/generativelanguage) and [google-auth-library](https://www.npmjs.com/package/google-auth-library) packages .
 
 However, making requests with the native package is simply too complicated, clunky, and slow.
 
@@ -173,13 +174,13 @@ PaLM.generateText(message, { ...config });
 #### Config:
 
 | Config            | Type                                     | Description                                                     |
-| ----------------- | ---------------------------------------- | --------------------------------------------------------------- | --- |
+| ----------------- | ---------------------------------------- | --------------------------------------------------------------- |
 | `model`           | string                                   | Any model capable of `generateText`. Default: `text-bison-001`. |
 | `candidate_count` | integer                                  | How many responses to generate. Default: `1`                    |
 | `temperature`     | float                                    | Temperature of model. Default: `0`                              |
 | `top_p`           | float                                    | top_p of model. Default: `0.95`                                 |
 | `top_k`           | float                                    | top_k of model. Default: `40`                                   |
-| `format`          | `PaLM.FORMATS.MD` or `PaLM.FORMATS.JSON` | Return as JSON or Markdown. Default: `PaLM.FORMATS.MD`          |     |
+| `format`          | `PaLM.FORMATS.MD` or `PaLM.FORMATS.JSON` | Return as JSON or Markdown. Default: `PaLM.FORMATS.MD`          |
 
 #### Example:
 
