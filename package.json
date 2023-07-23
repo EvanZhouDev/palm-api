@@ -1,6 +1,6 @@
 {
   "name": "palm-api",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A PaLM API for JS",
   "main": "index.js",
   "scripts": {
