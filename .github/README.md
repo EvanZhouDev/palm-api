@@ -5,6 +5,17 @@
   <img alt="PaLM API Banner" src="../assets/banner@light.svg">
 </picture>
 <p align="center">
+  <a aria-label="NPM Version" href="https://www.npmjs.com/package/palm-api">
+    <img alt="" src="https://img.shields.io/npm/v/palm-api.svg?label=NPM&logo=npm&style=for-the-badge&color=3D16A8&logoColor=white">
+  </a>
+  <a aria-label="NPM Download Count" href="https://www.npmjs.com/package/palm-api">
+    <img alt="" src="https://img.shields.io/npm/dt/palm-api?label=Downloads&style=for-the-badge&color=4A9596">
+  </a>
+  <a aria-label="palm-api Size" href="https://www.npmjs.com/package/palm-api">
+    <img alt="" src="https://img.shields.io/bundlephobia/minzip/palm-api?style=for-the-badge&color=3FD586">
+  </a>
+</p>
+<p align="center">
   <a href="#documentation">Docs</a> | <a href="https://github.com/evanzhoudev/palm-api">GitHub</a> | <a href="#frequently-asked-questions">FAQ</a>
 </p>
 
