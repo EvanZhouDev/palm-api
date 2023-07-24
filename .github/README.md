@@ -47,7 +47,7 @@ Compared to Google's [own API](#why-palm-api):
 
 ## Why PaLM API?
 
-Google has its own API interface for PaLM, though their [@google/generativelanguage](https://www.npmjs.com/package/@google-ai/generativelanguage) and [google-auth-library](https://www.npmjs.com/package/google-auth-library) packages .
+Google has its own API interface for PaLM, through their [@google/generativelanguage](https://www.npmjs.com/package/@google-ai/generativelanguage) and [google-auth-library](https://www.npmjs.com/package/google-auth-library) packages .
 
 However, making requests with the native package is simply too complicated, clunky, and slow.
 
