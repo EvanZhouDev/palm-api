@@ -1,5 +1,5 @@
 class PaLM {
-    #fetch = fetch;
+    #fetch;
 
     static FORMATS = {
         JSON: "json",
