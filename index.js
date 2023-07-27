@@ -1,4 +1,6 @@
 class PaLM {
+    #fetch = fetch;
+
     static FORMATS = {
         JSON: "json",
         MD: "markdown",
