@@ -16,7 +16,7 @@ class PaLM {
         let config = this.#parseConfig(rawConfig, {
             fetch: defaultFetch,
         })
-        console.log(config.fetch)
+
         if (!config.fetch) throw new Error("Fetch was not found in environment, and no polyfill was provided. Please install a polyfill, and put it in the `fetch` property of the PaLM configuration.")
 
         this.#fetch = config.fetch;
@@ -183,5 +183,9 @@ class PaLM {
         return (new Chat(this, ...rawConfig))
     }
 }
+
+let bot = new PaLM("hi", {
+    fetch: () => {}
+})
 
 export default PaLM;
