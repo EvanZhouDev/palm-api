@@ -7,9 +7,18 @@ class PaLM {
     }
 
     constructor(key, rawConfig) {
+        let defaultFetch;
+
+        try {
+            defaultFetch = fetch
+        } catch { }
+
         let config = this.#parseConfig(rawConfig, {
-            fetch: fetch,
+            fetch: defaultFetch,
         })
+        console.log(config.fetch)
+        if (!config.fetch) throw new Error("Fetch was not found in environment, and no polyfill was provided. Please install a polyfill, and put it in the `fetch` property of the PaLM configuration.")
+
         this.#fetch = config.fetch;
         this.key = key;
     }
