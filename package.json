@@ -12,6 +12,7 @@
     "type": "git",
     "url": "https://github.com/EvanZhouDev/palm-api.git"
   },
+  "type": "module",
   "homepage": "https://github.com/EvanZhouDev/palm-api",
   "keywords": [
     "Google",
