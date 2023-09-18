@@ -27,7 +27,7 @@
 
 ### Highlights
 
-Compared to Google's [own API](#why-palm-api):
+`palm-api` v1.0 compared to Google's [own API](#why-palm-api):
 
 - ⚡ [**Fast**](#speed): As fast as native API (also making it _**4x**_ faster than `googlebard`)
 - 🪶 [**Lightweight**](#size): _**260x**_ smaller minzipped size
