@@ -281,7 +281,7 @@ PaLM.embed(message, { ...config });
 
 | Config  | Type   | Description                                                          |
 | ------- | ------ | -------------------------------------------------------------------- |
-| `model` | string | Any model capable of `generateText`. Default: `embedding-gecko-001`. |
+| `model` | string | Any model capable of `embedText`. Default: `embedding-gecko-001`. |
 
 #### Example:
 
@@ -321,7 +321,7 @@ Basic steps to use import/export chats:
 
 1. Create an instance of Chat with `PaLM.createChat()`
 2. Use `Chat.ask()` to query PaLM
-3. Use `Chat.export()` to export your messsages and PaLM responses
+3. Use `Chat.export()` to export your messages and PaLM responses
 4. Import your messages with the messages config with `PaLM.createChat({messages: exportedMessages})`
 
 > **Info**
