@@ -1,25 +1,28 @@
 {
-  "name": "palm-api",
-  "version": "1.1.0",
-  "description": "A PaLM API for JS & TS",
-  "main": "out/index.js",
-  "scripts": {
-    "build": "npx tsc"
-  },
-  "author": "EvanZhouDev",
-  "license": "GPL-3.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/EvanZhouDev/palm-api.git"
-  },
-  "type": "module",
-  "homepage": "https://github.com/EvanZhouDev/palm-api",
-  "keywords": [
-    "Google",
-    "PaLM",
-    "AI"
-  ],
-  "devDependencies": {
-    "typescript": "^5.1.6"
-  }
+	"name": "palm-api",
+	"version": "1.1.1",
+	"description": "A PaLM API for JS & TS",
+	"main": "out/index.js",
+	"scripts": {
+		"build": "npx tsc"
+	},
+	"author": "EvanZhouDev",
+	"license": "GPL-3.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/EvanZhouDev/palm-api.git"
+	},
+	"type": "module",
+	"homepage": "https://github.com/EvanZhouDev/palm-api",
+	"keywords": [
+		"Google",
+		"PaLM",
+		"AI"
+	],
+	"devDependencies": {
+		"typescript": "^5.1.6"
+	},
+	"files": [
+		"out"
+	]
 }
