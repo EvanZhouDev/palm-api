@@ -401,3 +401,4 @@ class Chat {
 }
 
 export default PaLM;
+export {Chat};
