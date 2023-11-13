@@ -312,7 +312,11 @@ Uses `generateMessage` capable models to create a chat interface that's simple, 
 ### Usage:
 
 ```javascript
-let chat = PaLM.createChat({ ...config });
+import PaLM from "palm-api";
+
+let bot = new PaLM(API_KEY);
+
+let chat = bot.createChat({ ...config });
 
 chat.ask(message, { ...config });
 
@@ -360,7 +364,7 @@ import PaLM from "palm-api";
 
 let bot = new PaLM(API_KEY);
 
-let chat = PaLM.createChat({
+let chat = bot.createChat({
 	temperature: 0,
 	context: "Respond like Shakespeare",
 });
